@@ -6,13 +6,15 @@ export const themeSettings = () => {
         palette: {
             mode: "light",
             primary: {
-                main: "#b38760",
+                main: "#000000",
             },
             secondary: {
-                main: "#7a5b3f",
+                main: "#ffffff",
             },
             background: {
                 default: "#edd7b3",
+                paper: "#b38760",
+                paperDarker: "#7a5b3f",
             },
         },
         typography: {
