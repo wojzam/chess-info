@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import {Box, Button, Paper, Stack, Typography} from '@mui/material';
-import {FastForward, FastRewind, SkipNext, SkipPrevious} from '@mui/icons-material';
 import ChessBoard from '../components/chess/ChessBoard';
 import {samplePuzzle} from '../const/SampleData.jsx'
+import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
+import FastRewindIcon from '@mui/icons-material/FastRewind';
+import FastForwardIcon from '@mui/icons-material/FastForward';
+import SkipNextIcon from '@mui/icons-material/SkipNext';
 
 
 const PuzzlePage = ({puzzleId = samplePuzzle.id, puzzle = samplePuzzle}) => {
@@ -111,28 +114,28 @@ const PuzzlePage = ({puzzleId = samplePuzzle.id, puzzle = samplePuzzle}) => {
                                 size="large"
                                 sx={{minWidth: 0}}
                             >
-                                <FastRewind/>
+                                <FastRewindIcon/>
                             </Button>
                             <Button
                                 onClick={handlePreviousMove}
                                 size="large"
                                 sx={{minWidth: 0}}
                             >
-                                <SkipPrevious/>
+                                <SkipPreviousIcon/>
                             </Button>
                             <Button
                                 onClick={handleNextMove}
                                 size="large"
                                 sx={{minWidth: 0}}
                             >
-                                <SkipNext/>
+                                <SkipNextIcon/>
                             </Button>
                             <Button
                                 onClick={handleLastMove}
                                 size="large"
                                 sx={{minWidth: 0}}
                             >
-                                <FastForward/>
+                                <FastForwardIcon/>
                             </Button>
                         </Stack>
                     </Paper>
