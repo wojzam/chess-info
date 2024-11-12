@@ -1,13 +1,30 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Outlet} from 'react-router-dom';
-import {Box, Button, Divider, Drawer, List, ListItemButton, ListItemIcon, ListItemText, Toolbar} from '@mui/material';
+import {
+    Box,
+    Button,
+    Divider,
+    Drawer,
+    IconButton,
+    List,
+    ListItemButton,
+    ListItemIcon,
+    ListItemText,
+    Toolbar,
+    useMediaQuery,
+    useTheme,
+} from '@mui/material';
 import ExtensionIcon from '@mui/icons-material/Extension';
 import ContentPasteIcon from '@mui/icons-material/ContentPaste';
 import SchoolIcon from '@mui/icons-material/School';
 import PeopleIcon from '@mui/icons-material/People';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import MenuIcon from '@mui/icons-material/Menu';
 
 export default function Layout() {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const [drawerOpen, setDrawerOpen] = useState(!isMobile);
     const drawerWidth = 240;
 
     const StyledListItemText = (props) => (
@@ -74,20 +91,31 @@ export default function Layout() {
     const [openSubmenus, setOpenSubmenus] = useState(Array(menuItems.length).fill(false));
 
     const toggleSubmenu = (index) => {
-        setOpenSubmenus(prevState => {
+        setOpenSubmenus((prevState) => {
             const newState = [...prevState];
             newState[index] = !newState[index];
             return newState;
         });
     };
 
+    const toggleDrawer = () => {
+        setDrawerOpen((prevState) => !prevState);
+    };
+
+    useEffect(() => {
+        setDrawerOpen(!isMobile);
+    }, [isMobile]);
+
     return (
         <Box sx={{display: 'flex', position: 'relative', minHeight: '100vh'}}>
             <Drawer
-                variant="permanent"
+                variant={isMobile ? 'temporary' : 'persistent'}
+                anchor="left"
+                open={drawerOpen}
+                onClose={toggleDrawer}
                 sx={{
-                    position: 'absolute',
                     width: drawerWidth,
+                    flexShrink: 0,
                     '& .MuiDrawer-paper': {
                         width: drawerWidth,
                         transition: 'width 0.3s',
@@ -98,18 +126,16 @@ export default function Layout() {
                     },
                 }}
             >
-                <Toolbar component='a' href="/"
-                         sx={{
-                             justifyContent: 'center',
-                             width: '100%',
-                             backgroundColor: 'black',
-                             color: 'white',
-                             padding: '10px',
-                             fontWeight: 'lighter',
-                             fontSize: '24px',
-                             textDecoration: 'none',
-                         }}
-                >
+                <Toolbar component="a" href="/" sx={{
+                    justifyContent: 'center',
+                    width: '100%',
+                    backgroundColor: 'black',
+                    color: 'white',
+                    padding: '10px',
+                    fontWeight: 'lighter',
+                    fontSize: '24px',
+                    textDecoration: 'none',
+                }}>
                     chess-info.com
                 </Toolbar>
 
@@ -156,12 +182,36 @@ export default function Layout() {
                 className="content"
                 sx={{
                     flexGrow: 1,
-                    display: 'flex',
-                    marginLeft: `${drawerWidth}px`,
+                    display: 'flex'
                 }}
             >
                 <Outlet/>
             </Box>
+
+            {isMobile && (
+                <Toolbar
+                    sx={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        zIndex: 1,
+                        backgroundColor: 'black',
+                        color: 'white',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        padding: '0 16px',
+                    }}
+                >
+                    <a href="/" style={{color: 'white', textDecoration: 'none'}}>
+                        chess-info.com
+                    </a>
+                    <IconButton color="inherit" onClick={toggleDrawer}>
+                        <MenuIcon/>
+                    </IconButton>
+                </Toolbar>
+            )}
         </Box>
     );
 }
