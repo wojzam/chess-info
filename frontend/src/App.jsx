@@ -5,6 +5,7 @@ import Layout from './components/Layout';
 import MainPage from './pages/MainPage.jsx';
 import Login from './pages/Login.jsx';
 import SignUp from './pages/SignUp.jsx';
+import PuzzlePage from "./pages/PuzzlePage.jsx";
 
 export default function App() {
     const [theme, colorMode] = useMode();
@@ -18,6 +19,7 @@ export default function App() {
                         <Route path="/" element={<MainPage/>}/>
                         <Route path="/login" element={<Login/>}/>
                         <Route path="/signup" element={<SignUp/>}/>
+                        <Route path="/puzzle" element={<PuzzlePage/>}/>
                     </Route>
                     <Route path="*" element={<Navigate replace to="/"/>}/>
                 </Routes>
