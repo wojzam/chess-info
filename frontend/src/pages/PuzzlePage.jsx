@@ -45,7 +45,15 @@ const PuzzlePage = ({puzzleId = samplePuzzle.id, puzzle = samplePuzzle}) => {
             </Typography>
 
             {/* Main Content Container */}
-            <Box sx={{display: 'flex', gap: 4}}>
+            <Box sx={{
+                display: 'flex',
+                gap: 4,
+                flexDirection: {
+                    xs: "column",
+                    sm: "column",
+                    md: "row",
+                },
+            }}>
                 {/* Left Side - Chess Board */}
                 <Box sx={{flex: 1}}>
                     <Paper
@@ -63,7 +71,11 @@ const PuzzlePage = ({puzzleId = samplePuzzle.id, puzzle = samplePuzzle}) => {
                 {/* Right Side - Info Panel */}
                 <Box
                     sx={{
-                        width: '260px',
+                        width: {
+                            xs: "100%",
+                            sm: "100%",
+                            md: '260px',
+                        },
                         display: 'flex',
                         flexDirection: 'column',
                         justifyContent: 'flex-end',

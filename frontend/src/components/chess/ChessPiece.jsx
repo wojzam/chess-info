@@ -18,7 +18,7 @@ const ChessPiece = ({type, color}) => {
         <Typography
             component="div"
             sx={{
-                fontSize: '3.5rem',
+                fontSize: {xs: '2.5rem', sm: '3.5rem', md: '4rem'},
                 cursor: 'pointer',
                 userSelect: 'none',
                 display: 'flex',

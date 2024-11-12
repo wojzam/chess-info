@@ -23,7 +23,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 export default function Layout() {
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const [drawerOpen, setDrawerOpen] = useState(!isMobile);
     const drawerWidth = 240;
 

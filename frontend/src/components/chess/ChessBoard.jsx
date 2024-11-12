@@ -110,8 +110,20 @@ const ChessBoard = ({puzzle}) => {
     const rowLabels = ['8', '7', '6', '5', '4', '3', '2', '1'];
 
     return (
-        <Paper elevation={3} sx={{width: 'fit-content', padding: 2}}>
-            <Grid container sx={{width: '680px', height: '680px'}}>
+        <Paper elevation={3} sx={{
+            width: '100%',
+            maxWidth: '100vw',
+            padding: 2,
+            display: 'flex',
+            justifyContent: 'center',
+        }}>
+            <Grid
+                container
+                sx={{
+                    width: 'min(80vw, 680px)',
+                    height: 'min(80vw, 680px)',
+                }}
+            >
                 {board.map((row, rowIndex) => (
                     <React.Fragment key={rowIndex}>
                         {row.map((piece, colIndex) => {
@@ -119,13 +131,15 @@ const ChessBoard = ({puzzle}) => {
                             const isSelected = selectedPiece &&
                                 selectedPiece[0] === rowIndex &&
                                 selectedPiece[1] === colIndex;
+
                             return (
                                 <Grid
                                     item
                                     key={`${rowIndex}-${colIndex}`}
                                     xs={1.5}
                                     sx={{
-                                        height: '85px',
+                                        flex: '1 0 12.5%',
+                                        aspectRatio: '1',
                                         backgroundColor: isLight ? '#edd7b3' : '#b38760',
                                         display: 'flex',
                                         justifyContent: 'center',
@@ -138,8 +152,8 @@ const ChessBoard = ({puzzle}) => {
                                             '&::after': {
                                                 content: '""',
                                                 position: 'absolute',
-                                                width: '20px',
-                                                height: '20px',
+                                                width: '20%',
+                                                height: '20%',
                                                 borderRadius: '50%',
                                                 backgroundColor: 'rgba(0, 255, 0, 0.3)',
                                             }
@@ -155,7 +169,7 @@ const ChessBoard = ({puzzle}) => {
                                                 position: 'absolute',
                                                 left: '4px',
                                                 top: '4px',
-                                                fontSize: '1rem',
+                                                fontSize: {xs: '0.75rem', sm: '1rem'},
                                                 color: isLight ? '#333' : '#fff'
                                             }}
                                         >
@@ -168,7 +182,7 @@ const ChessBoard = ({puzzle}) => {
                                                 position: 'absolute',
                                                 right: '4px',
                                                 bottom: '4px',
-                                                fontSize: '1rem',
+                                                fontSize: {xs: '0.75rem', sm: '1rem'},
                                                 color: isLight ? '#333' : '#fff'
                                             }}
                                         >
@@ -182,6 +196,7 @@ const ChessBoard = ({puzzle}) => {
                 ))}
             </Grid>
         </Paper>
+
     );
 };
 
