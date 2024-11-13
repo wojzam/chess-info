@@ -53,7 +53,7 @@ export default function Layout() {
             text: "Zadania",
             icon: <ExtensionIcon/>,
             submenu: [
-                {text: "Dzisiejsze zadanie", href: "/"},
+                {text: "Dzisiejsze zadanie", href: "/daily-task"},
                 {text: "Obecne zadania", href: "/"},
                 {text: "Rozpocznij nowe", href: "/"},
             ]

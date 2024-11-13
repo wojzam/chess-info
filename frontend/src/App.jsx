@@ -6,6 +6,7 @@ import MainPage from './pages/MainPage.jsx';
 import Login from './pages/Login.jsx';
 import SignUp from './pages/SignUp.jsx';
 import PuzzlePage from "./pages/PuzzlePage.jsx";
+import DailyTaskPage from "./pages/DailyTaskPage.jsx";
 import NewMeetingPage from "./pages/NewMeetingPage.jsx";
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
                         <Route path="/login" element={<Login/>}/>
                         <Route path="/signup" element={<SignUp/>}/>
                         <Route path="/puzzle" element={<PuzzlePage/>}/>
+                        <Route path="/daily-task" element={<DailyTaskPage/>}/>
                         <Route path="/new-meeting" element={<NewMeetingPage/>}/>
                     </Route>
                     <Route path="*" element={<Navigate replace to="/"/>}/>
