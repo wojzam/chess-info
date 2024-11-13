@@ -63,7 +63,7 @@ export default function Layout() {
             icon: <ContentPasteIcon/>,
             submenu: [
                 {text: "Zaplanowane spotkania", href: "/"},
-                {text: "Nowe spotkanie", href: "/"},
+                {text: "Nowe spotkanie", href: "/new-meeting"},
                 {text: "Historia spotkań", href: "/"},
             ]
         },
