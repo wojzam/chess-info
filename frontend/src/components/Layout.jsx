@@ -11,6 +11,7 @@ import {
     ListItemIcon,
     ListItemText,
     Toolbar,
+    Typography,
     useMediaQuery,
     useTheme,
 } from '@mui/material';
@@ -20,6 +21,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import PeopleIcon from '@mui/icons-material/People';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function Layout() {
     const theme = useTheme();
@@ -126,17 +128,27 @@ export default function Layout() {
                     },
                 }}
             >
-                <Toolbar component="a" href="/" sx={{
+                <Toolbar sx={{
                     justifyContent: 'center',
                     width: '100%',
                     backgroundColor: 'black',
-                    color: 'white',
                     padding: '10px',
-                    fontWeight: 'lighter',
-                    fontSize: '24px',
-                    textDecoration: 'none',
                 }}>
-                    chess-info.com
+                    {isMobile ?
+                        <Box display="flex" justifyContent="flex-start" width='100%'>
+                            <IconButton color="secondary" onClick={toggleDrawer}>
+                                <CloseIcon/>
+                            </IconButton>
+                        </Box>
+                        : <Typography component="a" href="/" sx={{
+                            color: 'white',
+                            fontWeight: 'lighter',
+                            fontSize: '24px',
+                            textDecoration: 'none'
+                        }}>
+                            chess-info.com
+                        </Typography>
+                    }
                 </Toolbar>
 
                 <List sx={{width: '100%', flexGrow: 1, pt: 0}}>
@@ -173,7 +185,7 @@ export default function Layout() {
                         Logowanie
                     </Button>
                     <Button variant="contained" component="a" href="/signup" fullWidth
-                            sx={{ fontSize: '18px'}}>
+                            sx={{fontSize: '18px'}}>
                         Rejestracja
                     </Button>
                 </Box>
@@ -205,12 +217,14 @@ export default function Layout() {
                         padding: '0 16px',
                     }}
                 >
-                    <a href="/" style={{color: 'white', textDecoration: 'none'}}>
-                        chess-info.com
-                    </a>
                     <IconButton color="inherit" onClick={toggleDrawer}>
                         <MenuIcon/>
                     </IconButton>
+                    <a href="/"
+                       style={{color: 'white', textDecoration: 'none', fontWeight: 'lighter', fontSize: '24px',}}>
+                        chess-info.com
+                    </a>
+                    <Box width="5vw"></Box>
                 </Toolbar>
             )}
         </Box>
