@@ -7,7 +7,9 @@ import Login from './pages/Login.jsx';
 import SignUp from './pages/SignUp.jsx';
 import PuzzlePage from "./pages/PuzzlePage.jsx";
 import DailyTaskPage from "./pages/DailyTaskPage.jsx";
+import UserCoursesPage from "./pages/UserCoursesPage.jsx";
 import NewMeetingPage from "./pages/NewMeetingPage.jsx";
+import InstructorCoursesPage from "./pages/InstructorCoursesPage.jsx";
 
 export default function App() {
     const [theme, colorMode] = useMode();
@@ -23,7 +25,9 @@ export default function App() {
                         <Route path="/signup" element={<SignUp/>}/>
                         <Route path="/puzzle" element={<PuzzlePage/>}/>
                         <Route path="/daily-task" element={<DailyTaskPage/>}/>
+                        <Route path="/user-courses" element={<UserCoursesPage/>}/>
                         <Route path="/new-meeting" element={<NewMeetingPage/>}/>
+                        <Route path="/instructor-courses" element={<InstructorCoursesPage/>}/>
                     </Route>
                     <Route path="*" element={<Navigate replace to="/"/>}/>
                 </Routes>

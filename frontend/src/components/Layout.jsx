@@ -64,7 +64,7 @@ export default function Layout() {
             text: "Kurs",
             icon: <ContentPasteIcon/>,
             submenu: [
-                {text: "Zaplanowane spotkania", href: "/"},
+                {text: "Zaplanowane spotkania", href: "/user-courses"},
                 {text: "Nowe spotkanie", href: "/new-meeting"},
                 {text: "Historia spotkań", href: "/"},
             ]
@@ -73,7 +73,7 @@ export default function Layout() {
             text: "Dla Instruktorów",
             icon: <PeopleIcon/>,
             submenu: [
-                {text: "Zaplanowane kursy", href: "/"},
+                {text: "Zaplanowane kursy", href: "/instructor-courses"},
                 {text: "Prośby kursu", href: "/"},
                 {text: "Zgłoś kandydaturę", href: "/"},
                 {text: "Wymagania", href: "/"},

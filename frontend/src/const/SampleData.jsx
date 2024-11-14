@@ -37,3 +37,112 @@ export const instructors = [
     {id: 14, name: 'Dorota Wiśniewska', specialization: 'Taktyka Wysokiego Poziomu'},
     {id: 15, name: 'Jacek Kozłowski', specialization: 'Rozwój Strategii Środkowej Gry'},
 ];
+
+export const instructorCourses = {
+    'Październik 2024': [
+        {
+            date: '21.10.2024',
+            time: '13:00',
+            user: {name: 'Krzysztof', level: 'początkujący'},
+        },
+        {
+            date: '21.10.2024',
+            time: '14:00',
+            user: {name: 'Monika', level: 'zaawansowany'},
+        },
+        {
+            date: '23.10.2024',
+            time: '10:00',
+            user: {name: 'Anna', level: 'początkujący'},
+        },
+        {
+            date: '24.10.2024',
+            time: '16:00',
+            user: {name: 'Marcin', level: 'średniozaawansowany'},
+        },
+    ],
+    'Listopad 2024': [
+        {
+            date: '15.11.2024',
+            time: '10:00',
+            user: {name: 'Piotr', level: 'średniozaawansowany'},
+        },
+        {
+            date: '17.11.2024',
+            time: '09:00',
+            user: {name: 'Elżbieta', level: 'zaawansowany'},
+        },
+        {
+            date: '20.11.2024',
+            time: '14:00',
+            user: {name: 'Tomasz', level: 'początkujący'},
+        },
+    ],
+    'Grudzień 2024': [
+        {
+            date: '05.12.2024',
+            time: '11:00',
+            user: {name: 'Katarzyna', level: 'średniozaawansowany'},
+        },
+        {
+            date: '12.12.2024',
+            time: '15:00',
+            user: {name: 'Marek', level: 'początkujący'},
+        },
+    ],
+};
+
+export const userCourses = {
+    'Październik 2024': [
+        {
+            date: '21.10.2024',
+            time: '13:00',
+            instructor: 'Jan Kowalski',
+        },
+        {
+            date: '22.10.2024',
+            time: '14:00',
+            instructor: 'Jan Kowalski',
+        },
+        {
+            date: '23.10.2024',
+            time: '10:00',
+            instructor: 'Anna Nowak',
+        },
+        {
+            date: '24.10.2024',
+            time: '16:00',
+            instructor: 'Paweł Wiśniewski',
+        },
+    ],
+    'Listopad 2024': [
+        {
+            date: '15.11.2024',
+            time: '10:00',
+            instructor: 'Anna Nowak',
+        },
+        {
+            date: '17.11.2024',
+            time: '09:00',
+            instructor: 'Paweł Wiśniewski',
+        },
+        {
+            date: '20.11.2024',
+            time: '14:00',
+            instructor: 'Jan Kowalski',
+        },
+    ],
+    'Grudzień 2024': [
+        {
+            date: '05.12.2024',
+            time: '11:00',
+            instructor: 'Anna Nowak',
+        },
+        {
+            date: '12.12.2024',
+            time: '15:00',
+            instructor: 'Jan Kowalski',
+        },
+    ],
+};
+
