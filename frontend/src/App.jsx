@@ -10,6 +10,9 @@ import DailyTaskPage from "./pages/DailyTaskPage.jsx";
 import UserCoursesPage from "./pages/UserCoursesPage.jsx";
 import NewMeetingPage from "./pages/NewMeetingPage.jsx";
 import InstructorCoursesPage from "./pages/InstructorCoursesPage.jsx";
+import TermsPage from "./pages/TermsPage.jsx";
+import ContactPage from "./pages/ContactPage.jsx";
+import FAQPage from "./pages/FAQPage.jsx";
 
 export default function App() {
     const [theme, colorMode] = useMode();
@@ -28,6 +31,9 @@ export default function App() {
                         <Route path="/user-courses" element={<UserCoursesPage/>}/>
                         <Route path="/new-meeting" element={<NewMeetingPage/>}/>
                         <Route path="/instructor-courses" element={<InstructorCoursesPage/>}/>
+                        <Route path="/terms" element={<TermsPage/>}/>
+                        <Route path="/contact" element={<ContactPage/>}/>
+                        <Route path="/faq" element={<FAQPage/>}/>
                     </Route>
                     <Route path="*" element={<Navigate replace to="/"/>}/>
                 </Routes>

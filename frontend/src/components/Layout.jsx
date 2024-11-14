@@ -83,9 +83,9 @@ export default function Layout() {
             text: "Inne",
             icon: <MoreHorizIcon/>,
             submenu: [
-                {text: "FAQ", href: "/"},
-                {text: "Kontakt", href: "/"},
-                {text: "Regulamin", href: "/"},
+                {text: "FAQ", href: "/faq"},
+                {text: "Kontakt", href: "/contact"},
+                {text: "Regulamin", href: "/terms"},
             ]
         },
     ];
