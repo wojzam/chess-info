@@ -169,10 +169,11 @@ export default function Layout() {
                     width: "100%"
                 }}>
                     <Button variant="contained" component="a" href="/login" fullWidth color="secondary"
-                            sx={{marginBottom: '10px'}}>
+                            sx={{marginBottom: '10px', fontSize: '18px'}}>
                         Logowanie
                     </Button>
-                    <Button variant="contained" component="a" href="/signup" fullWidth>
+                    <Button variant="contained" component="a" href="/signup" fullWidth
+                            sx={{ fontSize: '18px'}}>
                         Rejestracja
                     </Button>
                 </Box>

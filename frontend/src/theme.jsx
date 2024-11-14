@@ -20,6 +20,21 @@ export const themeSettings = () => {
         typography: {
             fontFamily: ["Kreon", "serif"].join(","),
         },
+        components: {
+            MuiButton: {
+                styleOverrides: {
+                    root: {
+                        borderRadius: 16,
+                        "&:hover": {
+                            backgroundColor: "#3c3c3c",
+                        },
+                        "&:focus": {
+                            backgroundColor: "#3c3c3c",
+                        },
+                    },
+                },
+            },
+        },
     };
 };
 
