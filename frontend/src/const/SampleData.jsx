@@ -20,6 +20,69 @@ export const samplePuzzle = {
     player: 'white'
 };
 
+export const tasks = [
+    {
+        id: 1,
+        title: "Mat w 2 ruchu",
+        difficulty: "Średnie",
+        description: "Białe zaczynają i dają mata w 2 ruchach"
+    },
+    {
+        id: 2,
+        title: "Wieżowy końcowy",
+        difficulty: "Trudne",
+        description: "Wykorzystaj wieżę do wygrania końcówki"
+    },
+    {
+        id: 3,
+        title: "Gambit hetmański",
+        difficulty: "Łatwe",
+        description: "Znajdź najlepszą odpowiedź na gambit hetmański"
+    },
+    {
+        id: 4,
+        title: "Obrona sycylijska",
+        difficulty: "Średnie",
+        description: "Znajdź kluczowy ruch w obronie sycylijskiej"
+    },
+    {
+        id: 5,
+        title: "Końcówka gońcowa",
+        difficulty: "Trudne",
+        description: "Wykorzystaj przewagę gońca w końcówce"
+    },
+    {
+        id: 6,
+        title: "Atak na króla",
+        difficulty: "Średnie",
+        description: "Przeprowadź decydujący atak na króla przeciwnika"
+    },
+    {
+        id: 7,
+        title: "Obrona francuska",
+        difficulty: "Łatwe",
+        description: "Znajdź właściwą kontynuację w obronie francuskiej"
+    },
+    {
+        id: 8,
+        title: "Izolowany pion hetmański",
+        difficulty: "Średnie",
+        description: "Wykorzystaj słabość izolowanego piona"
+    },
+    {
+        id: 9,
+        title: "Końcówka wieżowa",
+        difficulty: "Trudne",
+        description: "Znajdź wygrywający plan w końcówce wieżowej"
+    },
+    {
+        id: 10,
+        title: "Mat w 3 ruchu",
+        difficulty: "Trudne",
+        description: "Białe zaczynają i dają mata w 3 ruchach"
+    }
+];
+
 export const instructors = [
     {id: 1, name: 'Jan Kowalski', specialization: 'Taktyka i Strategie'},
     {id: 2, name: 'Anna Nowak', specialization: 'Gra Początkowa'},

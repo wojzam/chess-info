@@ -13,7 +13,7 @@ const DailyTaskPage = ({puzzle = samplePuzzle}) => {
                     mb: 3, fontWeight: 'bold', color: '#000'
                 }}
             >
-                Dzisiejsze zadanie
+                Dzisiejsze zadanie (1/5)
             </Typography>
             <ControlledChessBoard puzzle={puzzle}/>
         </Box>
