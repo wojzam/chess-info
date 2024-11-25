@@ -106,21 +106,25 @@ export const instructorCourses = {
         {
             date: '21.10.2024',
             time: '13:00',
+            status: 'accepted',
             user: {name: 'Krzysztof', level: 'początkujący'},
         },
         {
             date: '21.10.2024',
             time: '14:00',
+            status: 'accepted',
             user: {name: 'Monika', level: 'zaawansowany'},
         },
         {
             date: '23.10.2024',
             time: '10:00',
+            status: 'accepted',
             user: {name: 'Anna', level: 'początkujący'},
         },
         {
             date: '24.10.2024',
             time: '16:00',
+            status: 'accepted',
             user: {name: 'Marcin', level: 'średniozaawansowany'},
         },
     ],
@@ -128,16 +132,19 @@ export const instructorCourses = {
         {
             date: '15.11.2024',
             time: '10:00',
+            status: 'accepted',
             user: {name: 'Piotr', level: 'średniozaawansowany'},
         },
         {
             date: '17.11.2024',
             time: '09:00',
+            status: 'accepted',
             user: {name: 'Elżbieta', level: 'zaawansowany'},
         },
         {
             date: '20.11.2024',
             time: '14:00',
+            status: 'accepted',
             user: {name: 'Tomasz', level: 'początkujący'},
         },
     ],
@@ -145,14 +152,49 @@ export const instructorCourses = {
         {
             date: '05.12.2024',
             time: '11:00',
+            status: 'accepted',
             user: {name: 'Katarzyna', level: 'średniozaawansowany'},
         },
         {
             date: '12.12.2024',
             time: '15:00',
+            status: 'accepted',
             user: {name: 'Marek', level: 'początkujący'},
         },
     ],
+};
+
+export const instructorCoursesPending = {
+    'Październik 2024': [
+        {
+            date: '21.10.2024',
+            time: '13:00',
+            status: 'pending',
+            user: {name: 'Krzysztof', level: 'początkujący'},
+        },
+        {
+            date: '21.10.2024',
+            time: '14:00',
+            status: 'pending',
+            user: {name: 'Monika', level: 'zaawansowany'},
+        }
+    ],
+    'Listopad 2024': [
+        {
+            date: '15.11.2024',
+            time: '10:00',
+            status: 'pending',
+            user: {name: 'Piotr', level: 'średniozaawansowany'},
+        }
+    ],
+    'Grudzień 2024': [
+        {
+            date: '05.12.2024',
+            time: '11:00',
+            status: 'pending',
+            user: {name: 'Katarzyna', level: 'średniozaawansowany'},
+        }
+    ]
 };
 
 export const userCourses = {

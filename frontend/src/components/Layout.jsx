@@ -71,8 +71,7 @@ export default function Layout() {
             text: "Dla Instruktorów",
             icon: <PeopleIcon/>,
             submenu: [
-                {text: "Zaplanowane kursy", href: "/instructor-courses"},
-                {text: "Prośby kursu", href: "/"},
+                {text: "Kursy", href: "/instructor-courses"},
                 {text: "Zgłoś kandydaturę", href: "/"},
                 {text: "Wymagania", href: "/"},
             ]
