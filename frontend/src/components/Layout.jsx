@@ -72,8 +72,7 @@ export default function Layout() {
             icon: <PeopleIcon/>,
             submenu: [
                 {text: "Kursy", href: "/instructor-courses"},
-                {text: "Zgłoś kandydaturę", href: "/"},
-                {text: "Wymagania", href: "/"},
+                {text: "Zgłoś kandydaturę", href: "/instructor-application"},
             ]
         },
         {

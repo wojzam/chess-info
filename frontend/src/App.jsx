@@ -12,6 +12,7 @@ import UserCoursesPage from "./pages/UserCoursesPage.jsx";
 import CourseHistoryPage from "./pages/CourseHistoryPage.jsx";
 import NewMeetingPage from "./pages/NewMeetingPage.jsx";
 import InstructorCoursesPage from "./pages/InstructorCoursesPage.jsx";
+import InstructorApplicationPage from "./pages/InstructorApplicationPage.jsx";
 import TermsPage from "./pages/TermsPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import FAQPage from "./pages/FAQPage.jsx";
@@ -35,6 +36,7 @@ export default function App() {
                         <Route path="/course-history" element={<CourseHistoryPage/>}/>
                         <Route path="/new-meeting" element={<NewMeetingPage/>}/>
                         <Route path="/instructor-courses" element={<InstructorCoursesPage/>}/>
+                        <Route path="/instructor-application" element={<InstructorApplicationPage/>}/>
                         <Route path="/terms" element={<TermsPage/>}/>
                         <Route path="/contact" element={<ContactPage/>}/>
                         <Route path="/faq" element={<FAQPage/>}/>
