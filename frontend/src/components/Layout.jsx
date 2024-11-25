@@ -47,7 +47,7 @@ export default function Layout() {
             icon: <SchoolIcon/>,
             submenu: [
                 {text: "Losowa Zagadka", href: "/puzzle"},
-                {text: "Nauka Otwarć", href: "/"},
+                {text: "Nauka Otwarć", href: "/openings"},
             ]
         },
         {

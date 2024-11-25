@@ -20,6 +20,95 @@ export const samplePuzzle = {
     player: 'white'
 };
 
+export const openings = [
+    {
+        id: 'RuyLopez',
+        name: 'Ruy López',
+        description: 'Jedna z najstarszych i najbardziej znanych otwarć szachowych.',
+        pieces: [
+            // White pieces
+            {type: 'king', color: 'white', position: 'e1'},
+            {type: 'queen', color: 'white', position: 'd1'},
+            {type: 'rook', color: 'white', position: 'a1'},
+            {type: 'rook', color: 'white', position: 'h1'},
+            {type: 'bishop', color: 'white', position: 'c1'},
+            {type: 'bishop', color: 'white', position: 'f1'},
+            {type: 'knight', color: 'white', position: 'b1'},
+            {type: 'knight', color: 'white', position: 'g1'},
+            {type: 'pawn', color: 'white', position: 'a2'},
+            {type: 'pawn', color: 'white', position: 'b2'},
+            {type: 'pawn', color: 'white', position: 'c2'},
+            {type: 'pawn', color: 'white', position: 'd2'},
+            {type: 'pawn', color: 'white', position: 'e2'},
+            {type: 'pawn', color: 'white', position: 'f2'},
+            {type: 'pawn', color: 'white', position: 'g2'},
+            {type: 'pawn', color: 'white', position: 'h2'},
+
+            // Black pieces
+            {type: 'king', color: 'black', position: 'e8'},
+            {type: 'queen', color: 'black', position: 'd8'},
+            {type: 'rook', color: 'black', position: 'a8'},
+            {type: 'rook', color: 'black', position: 'h8'},
+            {type: 'bishop', color: 'black', position: 'c8'},
+            {type: 'bishop', color: 'black', position: 'f8'},
+            {type: 'knight', color: 'black', position: 'b8'},
+            {type: 'knight', color: 'black', position: 'g8'},
+            {type: 'pawn', color: 'black', position: 'a7'},
+            {type: 'pawn', color: 'black', position: 'b7'},
+            {type: 'pawn', color: 'black', position: 'c7'},
+            {type: 'pawn', color: 'black', position: 'd7'},
+            {type: 'pawn', color: 'black', position: 'e7'},
+            {type: 'pawn', color: 'black', position: 'f7'},
+            {type: 'pawn', color: 'black', position: 'g7'},
+            {type: 'pawn', color: 'black', position: 'h7'}
+        ],
+        player: 'white'
+    },
+    {
+        id: 'SicilianDefense',
+        name: 'Obrona Sycylijska',
+        description: 'Agresywne otwarcie czarnych, które zmienia dynamikę gry.',
+        pieces: [
+            // White pieces
+            {type: 'king', color: 'white', position: 'e1'},
+            {type: 'queen', color: 'white', position: 'd1'},
+            {type: 'rook', color: 'white', position: 'a1'},
+            {type: 'rook', color: 'white', position: 'h1'},
+            {type: 'bishop', color: 'white', position: 'c1'},
+            {type: 'bishop', color: 'white', position: 'f1'},
+            {type: 'knight', color: 'white', position: 'b1'},
+            {type: 'knight', color: 'white', position: 'g1'},
+            {type: 'pawn', color: 'white', position: 'a2'},
+            {type: 'pawn', color: 'white', position: 'b2'},
+            {type: 'pawn', color: 'white', position: 'c2'},
+            {type: 'pawn', color: 'white', position: 'd2'},
+            {type: 'pawn', color: 'white', position: 'e4'},
+            {type: 'pawn', color: 'white', position: 'f2'},
+            {type: 'pawn', color: 'white', position: 'g2'},
+            {type: 'pawn', color: 'white', position: 'h2'},
+
+            // Black pieces
+            {type: 'king', color: 'black', position: 'e8'},
+            {type: 'queen', color: 'black', position: 'd8'},
+            {type: 'rook', color: 'black', position: 'a8'},
+            {type: 'rook', color: 'black', position: 'h8'},
+            {type: 'bishop', color: 'black', position: 'c8'},
+            {type: 'bishop', color: 'black', position: 'f8'},
+            {type: 'knight', color: 'black', position: 'b8'},
+            {type: 'knight', color: 'black', position: 'g8'},
+            {type: 'pawn', color: 'black', position: 'a7'},
+            {type: 'pawn', color: 'black', position: 'b7'},
+            {type: 'pawn', color: 'black', position: 'c5'},
+            {type: 'pawn', color: 'black', position: 'd7'},
+            {type: 'pawn', color: 'black', position: 'e7'},
+            {type: 'pawn', color: 'black', position: 'f7'},
+            {type: 'pawn', color: 'black', position: 'g7'},
+            {type: 'pawn', color: 'black', position: 'h7'}
+        ],
+        player: 'black'
+    }
+];
+
 export const tasks = [
     {
         id: 1,
