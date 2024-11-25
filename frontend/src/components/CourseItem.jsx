@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, Button, Paper, Typography} from '@mui/material';
 
-export const CourseItem = ({course, onCancel}) => {
+export const CourseItem = ({course, onCancel = null}) => {
     return (
         <Paper
             elevation={3}
@@ -20,9 +20,11 @@ export const CourseItem = ({course, onCancel}) => {
                     <Typography variant="h5" fontWeight="light">
                         {course.date} - {course.time}
                     </Typography>
-                    <Button variant="contained" style={{backgroundColor: '#4f2e1e', color: '#fff'}} onClick={onCancel}>
-                        Odwołaj
-                    </Button>
+                    {onCancel &&
+                        <Button variant="contained" style={{backgroundColor: '#4f2e1e', color: '#fff'}}
+                                onClick={onCancel}>
+                            Odwołaj
+                        </Button>}
                 </Box>
 
                 {course.user ? (

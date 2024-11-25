@@ -9,6 +9,7 @@ import PuzzlePage from "./pages/PuzzlePage.jsx";
 import DailyTaskPage from "./pages/DailyTaskPage.jsx";
 import TaskPage from "./pages/TaskPage.jsx";
 import UserCoursesPage from "./pages/UserCoursesPage.jsx";
+import CourseHistoryPage from "./pages/CourseHistoryPage.jsx";
 import NewMeetingPage from "./pages/NewMeetingPage.jsx";
 import InstructorCoursesPage from "./pages/InstructorCoursesPage.jsx";
 import TermsPage from "./pages/TermsPage.jsx";
@@ -31,6 +32,7 @@ export default function App() {
                         <Route path="/daily-task" element={<DailyTaskPage/>}/>
                         <Route path="/tasks" element={<TaskPage/>}/>
                         <Route path="/user-courses" element={<UserCoursesPage/>}/>
+                        <Route path="/course-history" element={<CourseHistoryPage/>}/>
                         <Route path="/new-meeting" element={<NewMeetingPage/>}/>
                         <Route path="/instructor-courses" element={<InstructorCoursesPage/>}/>
                         <Route path="/terms" element={<TermsPage/>}/>

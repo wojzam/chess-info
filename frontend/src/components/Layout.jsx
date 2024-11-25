@@ -48,7 +48,6 @@ export default function Layout() {
             submenu: [
                 {text: "Losowa Zagadka", href: "/puzzle"},
                 {text: "Nauka Otwarć", href: "/"},
-                {text: "Znane Partie", href: "/"},
             ]
         },
         {
@@ -65,7 +64,7 @@ export default function Layout() {
             submenu: [
                 {text: "Zaplanowane spotkania", href: "/user-courses"},
                 {text: "Nowe spotkanie", href: "/new-meeting"},
-                {text: "Historia spotkań", href: "/"},
+                {text: "Historia spotkań", href: "/course-history"},
             ]
         },
         {
