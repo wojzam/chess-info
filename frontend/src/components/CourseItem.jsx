@@ -1,5 +1,7 @@
 import React from 'react';
 import {Box, Button, Paper, Typography} from '@mui/material';
+import CheckIcon from '@mui/icons-material/Check';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 export const CourseItem = ({course, onCancel = null, onAccept = null}) => {
     return (
@@ -21,18 +23,27 @@ export const CourseItem = ({course, onCancel = null, onAccept = null}) => {
                         {course.date} - {course.time}
                     </Typography>
                     <Box display="flex" gap={2}>
-                        {onAccept &&
-                            <Button variant="contained" style={{backgroundColor: '#4f2e1e', color: '#fff'}}
-                                    onClick={onCancel}>
+                        {onAccept && (
+                            <Button
+                                variant="contained"
+                                startIcon={<CheckIcon/>}
+                                style={{backgroundColor: '#4f2e1e', color: '#fff'}}
+                                onClick={onAccept}
+                            >
                                 Akceptuj
-                            </Button>}
-                        {onCancel &&
-                            <Button variant="contained" style={{backgroundColor: '#4f2e1e', color: '#fff'}}
-                                    onClick={onCancel}>
+                            </Button>
+                        )}
+                        {onCancel && (
+                            <Button
+                                variant="contained"
+                                startIcon={<CancelIcon/>}
+                                style={{backgroundColor: '#4f2e1e', color: '#fff'}}
+                                onClick={onCancel}
+                            >
                                 Odwołaj
-                            </Button>}
+                            </Button>
+                        )}
                     </Box>
-
                 </Box>
 
                 {course.user ? (

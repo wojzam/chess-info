@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
-import {Accordion, AccordionDetails, AccordionSummary, Box, Typography} from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import {CourseItem} from "./CourseItem.jsx";
+import CourseAccordion from './CourseAccordion';
 
 const CoursePendingList = ({courses}) => {
     const [pendingCoursesList, setPendingCoursesList] = useState(courses);
@@ -30,29 +28,17 @@ const CoursePendingList = ({courses}) => {
         });
     };
 
+    const actions = (month, index) => ({
+        onAccept: () => handleAcceptCourse(month, index),
+        onCancel: () => handleCancelCourse(month, index),
+    });
+
     return (
-        <Box width="100%">
-            {Object.keys(pendingCoursesList).map((month) => (
-                <Accordion key={month} sx={{backgroundColor: 'transparent', mb: 2}}>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon/>} sx={{backgroundColor: 'transparent'}}>
-                        <Typography variant="h5">{month}</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        {pendingCoursesList[month].length > 0 ? (
-                            pendingCoursesList[month].map((course, index) => (
-                                <CourseItem key={index} course={course}
-                                            onAccept={() => handleAcceptCourse(month, index)}
-                                            onCancel={() => handleCancelCourse(month, index)}/>
-                            ))
-                        ) : (
-                            <Typography variant="h6" color="textSecondary">
-                                Brak próśb kursów
-                            </Typography>
-                        )}
-                    </AccordionDetails>
-                </Accordion>
-            ))}
-        </Box>
+        <CourseAccordion
+            courses={pendingCoursesList}
+            actions={actions}
+            emptyText="Brak próśb kursów"
+        />
     );
 };
 
