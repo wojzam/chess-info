@@ -1,3 +1,4 @@
+using Chess_Info.Database;
 using Chess_Info.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddScoped<IHealthService, HealthService>();
+builder.Services.AddScoped<UserService>();
+builder.Services.AddSingleton<IDbContext, DbContext>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
