@@ -10,6 +10,7 @@ builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<ContactService>();
 builder.Services.AddScoped<CandidateService>();
 builder.Services.AddScoped<OpeningService>();
+builder.Services.AddScoped<PuzzleService>();
 builder.Services.AddSingleton<IDbContext, DbContext>();
 
 builder.Services.AddControllers();
