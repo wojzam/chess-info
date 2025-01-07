@@ -9,6 +9,7 @@ builder.Services.AddScoped<IHealthService, HealthService>();
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<ContactService>();
 builder.Services.AddScoped<CandidateService>();
+builder.Services.AddScoped<OpeningService>();
 builder.Services.AddSingleton<IDbContext, DbContext>();
 
 builder.Services.AddControllers();
