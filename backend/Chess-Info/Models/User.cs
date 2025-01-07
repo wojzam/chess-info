@@ -18,7 +18,7 @@ public class User
     [BsonElement("email")]
     public string Email { get; set; }
 
-    [BsonElement("instructorPrivillages")] //TODO: Fix this once database get corrected
+    [BsonElement("instructorPrivileges")]
     [BsonSerializer(typeof(StringToBooleanSerializer))]
     public bool InstructorPrivileges { get; set; }
 
