@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddScoped<IHealthService, HealthService>();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<ContactService>();
 builder.Services.AddSingleton<IDbContext, DbContext>();
 
 builder.Services.AddControllers();
