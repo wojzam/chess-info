@@ -1,63 +1,133 @@
 using Chess_Info.Models;
 using Chess_Info.Services;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System.ComponentModel.DataAnnotations;
 
 namespace Chess_Info.Controllers;
 
-using Microsoft.AspNetCore.Mvc;
-
 [ApiController]
 [Route("api/[controller]")]
-public class CandidatesController : ControllerBase
+public class PuzzlesController : ControllerBase
 {
-    private readonly CandidateService _candidateService;
+    private readonly PuzzleService _puzzleService;
+    private readonly ILogger<PuzzlesController> _logger;
 
-    public CandidatesController(CandidateService candidateService)
+    public PuzzlesController(PuzzleService puzzleService, ILogger<PuzzlesController> logger)
     {
-        _candidateService = candidateService;
+        _puzzleService = puzzleService;
+        _logger = logger;
     }
 
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var candidates = await _candidateService.GetAllAsync();
-        return Ok(candidates);
+        _logger.LogInformation("Fetching all puzzles.");
+        try
+        {
+            var puzzles = await _puzzleService.GetAllAsync();
+            return Ok(puzzles);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error occurred while fetching puzzles.");
+            return StatusCode(500, "An error occurred while processing your request.");
+        }
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(string id)
     {
-        var candidate = await _candidateService.GetByIdAsync(id);
-        if (candidate == null)
-            return NotFound();
-        return Ok(candidate);
+        _logger.LogInformation("Fetching puzzle with ID: {Id}", id);
+        try
+        {
+            var puzzle = await _puzzleService.GetByIdAsync(id);
+            if (puzzle == null)
+            {
+                _logger.LogWarning("Puzzle with ID: {Id} not found.", id);
+                return NotFound();
+            }
+            return Ok(puzzle);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error occurred while fetching puzzle with ID: {Id}", id);
+            return StatusCode(500, "An error occurred while processing your request.");
+        }
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(Candidate candidate)
+    public async Task<IActionResult> Create([FromBody] Puzzle puzzle)
     {
-        await _candidateService.CreateAsync(candidate);
-        return CreatedAtAction(nameof(GetById), new { id = candidate.Id }, candidate);
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        _logger.LogInformation("Creating new puzzle.");
+        try
+        {
+            await _puzzleService.CreateAsync(puzzle);
+            _logger.LogInformation("Puzzle created with ID: {Id}", puzzle.Id);
+            return CreatedAtAction(nameof(GetById), new { id = puzzle.Id }, puzzle);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error occurred while creating puzzle.");
+            return StatusCode(500, "An error occurred while processing your request.");
+        }
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(string id, Candidate updatedCandidate)
+    public async Task<IActionResult> Update(string id, [FromBody] Puzzle updatedPuzzle)
     {
-        var candidate = await _candidateService.GetByIdAsync(id);
-        if (candidate == null)
-            return NotFound();
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
 
-        await _candidateService.UpdateAsync(id, updatedCandidate);
-        return NoContent();
+        _logger.LogInformation("Updating puzzle with ID: {Id}", id);
+        try
+        {
+            var existingPuzzle = await _puzzleService.GetByIdAsync(id);
+            if (existingPuzzle == null)
+            {
+                _logger.LogWarning("Puzzle with ID: {Id} not found.", id);
+                return NotFound();
+            }
+
+            await _puzzleService.UpdateAsync(id, updatedPuzzle);
+            _logger.LogInformation("Puzzle with ID: {Id} updated successfully.", id);
+            return NoContent();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error occurred while updating puzzle with ID: {Id}", id);
+            return StatusCode(500, "An error occurred while processing your request.");
+        }
     }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(string id)
     {
-        var candidate = await _candidateService.GetByIdAsync(id);
-        if (candidate == null)
-            return NotFound();
+        _logger.LogInformation("Deleting puzzle with ID: {Id}", id);
+        try
+        {
+            var existingPuzzle = await _puzzleService.GetByIdAsync(id);
+            if (existingPuzzle == null)
+            {
+                _logger.LogWarning("Puzzle with ID: {Id} not found.", id);
+                return NotFound();
+            }
 
-        await _candidateService.DeleteAsync(id);
-        return NoContent();
+            await _puzzleService.DeleteAsync(id);
+            _logger.LogInformation("Puzzle with ID: {Id} deleted successfully.", id);
+            return NoContent();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error occurred while deleting puzzle with ID: {Id}", id);
+            return StatusCode(500, "An error occurred while processing your request.");
+        }
     }
 }
